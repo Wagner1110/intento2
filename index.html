@@ -63,6 +63,68 @@
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
+                <!-- Page Heading -->
+                 <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Nombre de Producto</th>
+                                            <th>Marca</th>
+                                            <th>Telefono</th>
+                                            <th>ACCIONES</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Nombre</th>
+                                            <th>Apellido</th>
+                                            <th>Telefono</th>
+                                            <th>ACCiones</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                    <?php
+                                    //hacemos instancia del archivo php 
+                                     include("conexion.php");
+                                     $con = conectar();
+                                    //generamos las sentencia sql
+                                    $sql = "SELECT * FROM usuario";
+                                    //ejecutamos la sentencia sql con la conexion a base de datos 
+                                     $datos = mysqli_query($con,$sql);
+                                    while($tabla = mysqli_fetch_array($datos)){
+                                    ?>
+                                        <tr>
+                                        <th><?php echo $tabla["id"];?></th>
+                                        <th><?php echo $tabla["Nombre"];?></th>
+                                        <th><?php echo $tabla["Apellido"];?></th>
+                                        <th><?php echo $tabla["Telefono"];?></th>
+
+                                        <th><a href="editar.php?id=<?php echo $tabla['id']; ?>" class="btn btn-warning btn-circle btn-sm">
+                                        <i class="fas fa-edit"></i>
+                                        <th><a href="DeleteDatos.php?id=<?php echo $tabla['id']; ?>" class="btn btn-danger btn-circle btn-sm">
+                                        <i class="fas fa-trash"></i>
+                                        </a>
+                                       </th>
+                                        </tr>
+
+                                        <?php
+                                         }
+                                         ?>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- Portfolio Grid Items-->
                 <div class="row justify-content-center">
                     
@@ -112,14 +174,10 @@
                           
                                  
             </div>
-        </section>
-      
-                 
+        </section>       
             </div>
         </footer>
-      
-   
-                </div>
+        </div>
             </div>
         </div>
         <!-- Bootstrap core JS-->
