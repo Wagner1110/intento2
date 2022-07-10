@@ -7,7 +7,7 @@
         <meta name="author" content="" />
         <title>Inventario</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+       
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
@@ -27,10 +27,12 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Registrar Productos</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">Ingresar Pedidos</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="login.php">Iniciar Secion</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Productos Disponibles</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Inicio de Secion</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="registrarProductos.php">Ingresar Productos</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="registrarPedidos.php">Ingresar Pedidos</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#Pedidos">Pedidos</a></li>
+                     
                     </ul>
                 </div>
             </div>
@@ -39,7 +41,7 @@
         <header class="masthead bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="..." />
+                <img class="" src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=820&q=80" width="275px"alt="" />
                 <!-- Masthead Heading-->
                 <h1 class="masthead-heading text-uppercase mb-0">COMPUTADORAS</h1>
                 <!-- Icon Divider-->
@@ -52,79 +54,7 @@
                 <p class="masthead-subheading font-weight-light mb-0">Bienvenidos!!!</p>
             </div>
         </header>
-        <!-- Portfolio Section-->
-        <section class="page-section portfolio" id="portfolio">
-            <div class="container">
-                <!-- Portfolio Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Productos</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Page Heading -->
-                 <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Nombre de Producto</th>
-                                            <th>Marca</th>
-                                            <th>Telefono</th>
-                                            <th>ACCIONES</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Nombre</th>
-                                            <th>Apellido</th>
-                                            <th>Telefono</th>
-                                            <th>ACCiones</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                    <?php
-                                    //hacemos instancia del archivo php 
-                                     include("conexion.php");
-                                     $con = conectar();
-                                    //generamos las sentencia sql
-                                    $sql = "SELECT * FROM usuario";
-                                    //ejecutamos la sentencia sql con la conexion a base de datos 
-                                     $datos = mysqli_query($con,$sql);
-                                    while($tabla = mysqli_fetch_array($datos)){
-                                    ?>
-                                        <tr>
-                                        <th><?php echo $tabla["id"];?></th>
-                                        <th><?php echo $tabla["Nombre"];?></th>
-                                        <th><?php echo $tabla["Apellido"];?></th>
-                                        <th><?php echo $tabla["Telefono"];?></th>
-
-                                        <th><a href="editar.php?id=<?php echo $tabla['id']; ?>" class="btn btn-warning btn-circle btn-sm">
-                                        <i class="fas fa-edit"></i>
-                                        <th><a href="DeleteDatos.php?id=<?php echo $tabla['id']; ?>" class="btn btn-danger btn-circle btn-sm">
-                                        <i class="fas fa-trash"></i>
-                                        </a>
-                                       </th>
-                                        </tr>
-
-                                        <?php
-                                         }
-                                         ?>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+       
                 <!-- Portfolio Grid Items-->
                 <div class="row justify-content-center">
                     
@@ -132,20 +62,84 @@
                 </div>
             </div>
         </section>
-        <!-- About Section-->
-        <section class="page-section bg-primary text-white mb-0" id="about">
+         <!-- Contact Section-->
+         <section class="page-section" id="Pedidos">
             <div class="container">
-                <!-- About Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">Ingresar</h2>
+                <!-- Contact Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Pedidos</h2>
                 <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
+                <div class="divider-custom">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
-              
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
             </div>
-        </section>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre de Producto</th>
+                                <th>Marca</th>
+                                <th>Descripcion</th>
+                                <th>Cantidad</th>
+                                <th>Costo</th>
+                                <th>Tienda</th>
+                                <th>Proveedor</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre de Producto</th>
+                                <th>Marca</th>
+                                <th>Descripcion</th>
+                                <th>Cantidad</th>
+                                <th>Costo</th>
+                                <th>Tienda</th>
+                                <th>Proveedor</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                        <?php
+                        //hacemos instancia del archivo php 
+                         include("conexion.php");
+                         $con = conectar();
+                        //generamos las sentencia sql
+                        $sql = "SELECT * FROM usuario";
+                        //ejecutamos la sentencia sql con la conexion a base de datos 
+                         $datos = mysqli_query($con,$sql);
+                        while($tabla = mysqli_fetch_array($datos)){
+                        ?>
+                            <tr>
+                            <th><?php echo $tabla["id"];?></th>
+                            <th><?php echo $tabla["Nombre"];?></th>
+                            <th><?php echo $tabla["Apellido"];?></th>
+                            <th><?php echo $tabla["Telefono"];?></th>
+
+                            <th><a href="editar.php?id=<?php echo $tabla['id']; ?>" class="btn btn-warning btn-circle btn-sm">
+                            <i class="fas fa-edit"></i>
+                            <th><a href="DeleteDatos.php?id=<?php echo $tabla['id']; ?>" class="btn btn-danger btn-circle btn-sm">
+                            <i class="fas fa-trash"></i>
+                            </a>
+                           </th>
+                            </tr>
+
+                            <?php
+                             }
+                             ?>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
         <!-- Contact Section-->
         <section class="page-section" id="contact">
             <div class="container">
@@ -157,6 +151,71 @@
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
+                <!-- DataTales Example -->
+         <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre de Producto</th>
+                                <th>Marca</th>
+                                <th>Descripcion</th>
+                                <th>Existencias</th>
+                                <th>Precio Unitario</th>
+                                <th>ACCIONES</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre de Producto</th>
+                                <th>Marca</th>
+                                <th>Descripcion</th>
+                                <th>Existencias</th>
+                                <th>Precio Unitario</th>
+                                <th>ACCIONES</th> 
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                        <?php
+                        //hacemos instancia del archivo php 
+                         include("conexion.php");
+                         $con = conectar();
+                        //generamos las sentencia sql
+                        $sql = "SELECT * FROM usuario";
+                        //ejecutamos la sentencia sql con la conexion a base de datos 
+                         $datos = mysqli_query($con,$sql);
+                        while($tabla = mysqli_fetch_array($datos)){
+                        ?>
+                            <tr>
+                            <th><?php echo $tabla["id"];?></th>
+                            <th><?php echo $tabla["Nombre"];?></th>
+                            <th><?php echo $tabla["Apellido"];?></th>
+                            <th><?php echo $tabla["Telefono"];?></th>
+
+                            <th><a href="editar.php?id=<?php echo $tabla['id']; ?>" class="btn btn-warning btn-circle btn-sm">
+                            <i class="fas fa-edit"></i>
+                            <th><a href="DeleteDatos.php?id=<?php echo $tabla['id']; ?>" class="btn btn-danger btn-circle btn-sm">
+                            <i class="fas fa-trash"></i>
+                            </a>
+                           </th>
+                            </tr>
+
+                            <?php
+                             }
+                             ?>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
                 <!-- Contact Section Form-->
                 <div class="row justify-content-center">
                     <div class="col-lg-8 col-xl-7">
